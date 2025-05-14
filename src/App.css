@@ -1,0 +1,87 @@
+/* App.css */
+
+/* Center the game container vertically and horizontally */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The grid container for the 3x3 boxes */
+.Boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  margin-bottom: 20px;
+  user-select: none; /* prevent text selection on click */
+}
+
+/* Each individual box */
+.Box {
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for boxes */
+.Box:hover {
+  background-color: #e0e7ff;
+  color: #1e40af;
+}
+
+/* Disable pointer events and change appearance for filled boxes */
+.Box:empty {
+  cursor: pointer;
+}
+
+.Box:not(:empty) {
+  cursor: default;
+  background-color: #d1d5db;
+  color: #4b5563;
+}
+
+/* The reset button */
+button {
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Status message */
+.status {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #059669; /* green for winner */
+}
+
+.optional {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #6b7280; /* gray for no winner */
+}
